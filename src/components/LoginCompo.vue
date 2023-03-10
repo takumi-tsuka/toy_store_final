@@ -1,5 +1,5 @@
 <template>
-<form class="logform">
+<form class="logform m-5">
   <!-- Email input -->
   <div class="form-outline mb-4">
     <input type="email" id="form2Example1" class="form-control" />
@@ -42,7 +42,6 @@
   main {
     display: flex;
     justify-content: center;
-    padding: 10vh;
   }
   .logform{
     width: 55vh;
