@@ -1,5 +1,6 @@
 <template>
-<form class="logform m-5">
+      <h1>Register</h1>
+      <form class="logform m-5  justify-content-center">
   <!-- Email input -->
   <div class="form-outline mb-4">
     <input type="email" id="form2Example1" class="form-control" />
@@ -35,14 +36,11 @@
   <div >
     <p>Not a member? <RouterLink to="/register">Register</RouterLink></p>
   </div>
-</form></template>
-<script>
-</script>
-<style>
-  .logform{
-    width: 55vh;
-  }
-  button {
-    background-color: green;
-  }
-</style>
+</form>
+  </template>
+  <script>
+  export default {
+    name: "RegisterCompo",
+  };
+  </script>
+  

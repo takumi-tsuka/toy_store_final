@@ -2,7 +2,7 @@
   <div class="container d-flex justify-content-center">
     <div class="row d-flex justify-content-center">
       <sort-compo class="m-2 col-10" />
-      <div class="card col-2 m-1 p-2" v-for="(toy, idx) in toyData" :key="idx">
+      <div class="card col-2 m-2 p-2" v-for="(toy, idx) in toyData" :key="idx">
         <img
           class="card-img-top"
           :src="require('../../assets/img/' + toy.img)"

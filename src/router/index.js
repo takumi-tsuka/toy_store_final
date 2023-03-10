@@ -3,6 +3,7 @@ import ProductCompo from "../components/Home/ProductList.vue";
 import DetailCompo from "../components/DetailCompo.vue";
 import LoginCompo from "../components/LoginCompo.vue";
 import CartCompo from "../components/CartCompo.vue";
+import RegisterCompo from "../components/RegisterCompo.vue";
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         path:"/cart",
         name:'cart-page',
         component: CartCompo
+    },
+    {
+        path:"/register",
+        name:"register-page",
+        component: RegisterCompo
     }
 ];
 

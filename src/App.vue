@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex justify-content-center mb-4">
+  <div class="d-flex justify-content-center mb-4">
     <div class="row col-12 d-flex justify-content-center">
       <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <div class="col-1"></div>
@@ -16,10 +16,14 @@
           </form>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <router-link to="/cart" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></router-link>
+              <router-link to="/cart" class="nav-link"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/login" class="nav-link"><i class="fa-solid fa-user"></i></router-link>
+              <router-link to="/login" class="nav-link"
+                ><i class="fa-solid fa-user"></i
+              ></router-link>
             </li>
           </ul>
           <div class="col-1"></div>
@@ -37,12 +41,17 @@ export default {
   name: "App",
   components: {},
 };
-
 </script>
 
 <style>
-main, nav {
+main,
+nav {
   font-family: "Walter Turncoat", cursive;
+}
+
+main {
+  display: flex;
+  justify-content: center;
 }
 
 i {
@@ -50,7 +59,7 @@ i {
   font-size: 30px;
 }
 
-#navbarSupportedContent{
-  gap: 3vh
+#navbarSupportedContent {
+  gap: 3vh;
 }
 </style>
