@@ -1,7 +1,7 @@
 <template>
   <div class="container d-flex justify-content-center">
     <div class="row d-flex justify-content-center">
-      <sort-compo class="m-2 col-10" />
+      <sort-compo @sort="sorted" class="m-2 col-10" />
       <div class="card col-2 m-2 p-2" v-for="(toy, idx) in toyData" :key="idx">
         <img
           class="card-img-top"
@@ -31,5 +31,11 @@ export default {
       toyData: toyjson,
     };
   },
+  methods: {
+    sorted(data){
+      this.toyData = data;
+      console.log(this.toyData);
+    }
+  }
 };
 </script>

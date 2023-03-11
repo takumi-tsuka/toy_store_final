@@ -1,46 +1,40 @@
 <template>
-      <h1>Register</h1>
-      <form class="logform m-5  justify-content-center">
-  <!-- Email input -->
-  <div class="form-outline mb-4">
-    <input type="email" id="form2Example1" class="form-control" />
-    <label class="form-label" for="form2Example1">Email address</label>
-  </div>
+  <form class="logform m-3 justify-content-center">
+    <h3 class="text-success mb-4" >Create an account</h3>
+    <div class="row form-outline mb-1 d-flex">
+      <label class="form-label col-6">First Name</label>
+      <label class="form-label col-6">Last Name</label>
+    </div>
 
-  <!-- Password input -->
-  <div class="form-outline mb-4">
-    <input type="password" id="form2Example2" class="form-control" />
-    <label class="form-label" for="form2Example2">Password</label>
-  </div>
-
-  <!-- 2 column grid layout for inline styling -->
-  <div class="row mb-4">
-    <div class="col d-flex justify-content-center">
-      <!-- Checkbox -->
-      <div class="form-check">
-        <input class="form-check-input"  type="checkbox" value="" id="form2Example31" checked />
-        <label class="form-check-label" for="form2Example31"> Remember me </label>
+    <div class="form-outline mb-4 d-flex justify-content-between">
+      <div class="row col-6">
+        <input type="text" class="form-control" name="fname" />
+      </div>
+      <div class="row col-6">
+        <input type="text" class="form-control" name="lname" />
       </div>
     </div>
 
-    <div class="col">
-      <!-- Simple link -->
-      <a href="#!">Forgot password?</a>
+    <div class="row form-outline mb-4">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" />
     </div>
-  </div>
 
-  <!-- Submit button -->
-  <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+    <div class="row form-outline mb-4">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="pass" />
+    </div>
 
-  <!-- Register buttons -->
-  <div >
-    <p>Not a member? <RouterLink to="/register">Register</RouterLink></p>
-  </div>
-</form>
-  </template>
-  <script>
-  export default {
-    name: "RegisterCompo",
-  };
-  </script>
-  
+    <div class="row d-flex">
+      <div class="col-8"></div>
+      <button type="button" class="btn btn-success btn-block mb-4 col-4">
+        Sign in
+      </button>
+    </div>
+  </form>
+</template>
+<script>
+export default {
+  name: "RegisterCompo",
+};
+</script>
