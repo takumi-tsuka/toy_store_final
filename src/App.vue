@@ -27,16 +27,24 @@
       </nav>
     </div>
   </div>
-
   <main>
-    <router-view />
+    <router-view :cart="cart"/>
   </main>
 </template>
 
 <script>
+import CartClass from "./classes/CartClass.js";
 export default {
   name: "App",
   components: {},
+  data(){
+    return {
+      cart:null
+    }
+  },
+  mounted(){
+    this.cart = new CartClass("user");
+  }
 };
 </script>
 

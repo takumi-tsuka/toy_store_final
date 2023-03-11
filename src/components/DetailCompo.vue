@@ -1,10 +1,59 @@
 <template>
-  <div class="container">
-    <h1>Detail</h1>
+  <div class="container" style="background-color:lightBlue;padding:3%">
+    <div class="row justify-content-center align-items-start g-2">
+      <div class="col-5">
+        <img style="height:600px;width:500px" :src="require('../assets/img/'+selectedToy.img)" :alt="selectedToy.img">
+      </div>
+      <div class="col-7" style="padding:1%;display:flex; flex-direction:column;row-gap:3vh;">
+        <h1>{{selectedToy.name}}</h1>
+        <details style="font-size:20px;">
+          <summary >show all detail <br>{{selectedToy.des.slice(0,500)}}</summary>
+          <p class="lead">{{selectedToy.des.slice(500)}}</p>
+        </details>
+        <h2>$ {{selectedToy.price}}</h2>
+        <p class="lead">
+          Age: {{selectedToy.age}} or older
+        </p>
+        <form @submit.prevent="addCart" class="form-floating mb-3" style="display:flex; flex-direction:column; row-gap:2vh;">
+          <input
+            type="number"
+            class="form-control" min="1" id="amount" placeholder="Put amount" v-model="amount">
+          <label for="amount">Amount</label>
+          <button class="btn btn-warning" type="submit">Add to Cart</button>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+import toys from "../assets/toys.json";
+import Toys from "../classes/Toy.js";
 export default {
   name: "DetailCompo",
+  props:["id","cart"],
+  data(){
+    return {
+      amount:1,
+      selectedToy:this.showToy()
+
+    }
+  },
+  methods:{
+    showToy(){
+      let selectedToy;
+      for(let toy of toys){
+          if(this.$route.query.id == toy.id){
+              selectedToy = toy;
+          }
+      }
+      return selectedToy;
+    },
+    addCart(){
+      let toy = new Toys(this.selectedToy.id,this.selectedToy.name,this.selectedToy.price,this.amount);
+      this.cart.addCart(toy.id,toy);
+      this.$router.push({name:"product-page"});
+      alert(toy.amount+" item added to your cart");
+    }
+  }
 };
 </script>

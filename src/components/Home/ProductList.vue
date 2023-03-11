@@ -15,10 +15,10 @@
           <h5 class="card-title">{{ toy.name }}</h5>
           <h4 class="card-subtitle">${{ toy.price }}</h4>
           <p class="card-text">Age: {{ toy.age }} or older</p>
-          <a href="#" class="btn btn-warning">Add to Cart</a>
+          <router-link @click="selectToy(toy)" class="btn btn-warning" to="/detail">Add to Cart</router-link>
         </div>
       </div>
-    </div>
+    </div>  
   </div>
 </template>
 <script>
@@ -29,7 +29,12 @@ export default {
   data() {
     return {
       toyData: toyjson,
-    };
+    }
   },
+  methods:{
+    selectToy(toy){
+      this.$router.push({name:"detail-page",query:{id:toy.id}})
+    }
+  }
 };
 </script>
