@@ -13,15 +13,6 @@
               <router-link to="/login" class="nav-link">Login</router-link>
             </li>
           </ul>
-          <form class="d-flex" style="column-gap: 0.5rem">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button type="submit" class="btn btn-success">Search</button>
-          </form>
           <div class="col-1"></div>
         </div>
       </nav>
@@ -39,7 +30,8 @@ export default {
   components: {},
   data(){
     return {
-      cart:null
+      cart:null,
+      logFlag: false
     }
   },
   mounted(){

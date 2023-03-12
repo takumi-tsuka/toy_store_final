@@ -5,8 +5,7 @@
             type="search"
             placeholder="Search"
             aria-label="Search"
-            @:input="tmpSearchToy"
-            v-model="input"
+            @input="tmpSearchToy"
         />
         <button type="submit" class="btn btn-success" @click.prevent="searchToy">Search</button>
     </form>
@@ -35,7 +34,7 @@
             },
             tmpSearchToy(e) {
                 this.searchFlag = true;
-                if(this.input == "") {
+                if(e.target.value == "") {
                     this.searchFlag = false;
                 }
                 let pickedDataArray = []; 
@@ -45,7 +44,6 @@
                     }
                 }
                 this.selectedToyData = pickedDataArray;
-                // this.$emit("sort", pickedDataArray);
             }
         }
     })

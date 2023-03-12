@@ -3,7 +3,7 @@ import ProductCompo from "../components/Home/ProductList.vue";
 import DetailCompo from "../components/DetailCompo.vue";
 import LoginCompo from "../components/LoginCompo.vue";
 import CartCompo from "../components/CartCompo.vue";
-import ThanksPage from "../components/ThanksPage.vue";
+import RegisterCompo from "../components/RegisterCompo.vue";
 
 const routes = [
     {
@@ -15,8 +15,7 @@ const routes = [
     {
         path:"/detail",
         name:'detail-page',
-        component: DetailCompo,
-        props:route=>({id:route.query.id})
+        component: DetailCompo
     },
     {
         path:"/login",
@@ -29,9 +28,9 @@ const routes = [
         component: CartCompo
     },
     {
-        path:"/thanks",
-        name:"thanks-page",
-        component:ThanksPage
+        path:"/register",
+        name:"register-page",
+        component: RegisterCompo
     }
 ];
 

@@ -19,7 +19,7 @@
             type="number"
             class="form-control" min="1" id="amount" placeholder="Put amount" v-model="amount">
           <label for="amount">Amount</label>
-          <button class="btn btn-warning" type="submit">Add to Cart</button>
+          <button class="btn btn-warning btn-clonse" type="submit">Add to Cart</button>
         </form>
       </div>
     </div>
@@ -28,14 +28,14 @@
 <script>
 import toys from "../assets/toys.json";
 import Toys from "../classes/Toy.js";
+
 export default {
   name: "DetailCompo",
   props:["id","cart"],
   data(){
     return {
       amount:1,
-      selectedToy:this.showToy()
-
+      selectedToy:this.showToy(),
     }
   },
   methods:{
@@ -52,7 +52,14 @@ export default {
       let toy = new Toys(this.selectedToy.id,this.selectedToy.name,this.selectedToy.price,this.amount);
       this.cart.addCart(toy.id,toy);
       this.$router.push({name:"product-page"});
-      alert(toy.amount+" item added to your cart");
+      this.alertFlag = true;
+      // alert(toy.amount+" item added to your cart");
+    },
+    countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    showAlert() {
+      this.dismissCountDown = this.dismissSecs
     }
   }
 };
