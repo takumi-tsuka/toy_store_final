@@ -62,4 +62,8 @@ i {
 #navbarSupportedContent {
   gap: 3vh;
 }
+
+input {
+    font-family:Arial, Helvetica, sans-serif;
+  }
 </style>
