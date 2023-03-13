@@ -1,4 +1,4 @@
-# final_project_vue
+# toy_store_final
 
 ## Project setup
 ```
