@@ -11,6 +11,8 @@
 </template>
 
 <script>
+// import toyjson from "../../assets/toys.json";
+
 export default {
   name: "SortCompo",
   props: ["toyData"],

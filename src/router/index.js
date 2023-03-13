@@ -4,6 +4,7 @@ import DetailCompo from "../components/DetailCompo.vue";
 import LoginCompo from "../components/LoginCompo.vue";
 import CartCompo from "../components/CartCompo.vue";
 import RegisterCompo from "../components/RegisterCompo.vue";
+import ThanksPage from "../components/ThanksPage.vue";
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
         path:"/register",
         name:"register-page",
         component: RegisterCompo
+    },
+    {
+        path:"/thanks",
+        name:"thanks-page",
+        component:ThanksPage
     }
 ];
 
