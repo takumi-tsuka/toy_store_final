@@ -7,9 +7,9 @@
         <div class="collapse navbar-collapse col-4" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <router-link to="/cart" class="nav-link"
-                ><i class="fa-solid fa-cart-shopping"></i
-              ></router-link>
+              <router-link to="/cart" class="nav-link">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/login" class="nav-link"

@@ -1,6 +1,8 @@
 <template>
   <div class="container d-flex justify-content-center">
     <div class="row col-12 d-flex justify-content-center">
+      
+<!-- CAROUSEL START -->
       <div class="container d-flex justify-content-center">
         <div class="row d-flex justify-content-center">
           <div id="myCarousel" class="carousel slide col-11 m-2" data-ride="carousel">
@@ -42,6 +44,8 @@
           </div>
         </div>
       </div>
+      <!-- CAROUSEL END -->
+
       <sort-compo @sort="sorted" :toyData="toyData" class="m-2 col-10" />
       <search-compo @sort="sorted" :toyData="toyData" :originalToyData="originalToyData" class="m-2 col-10" />
       <filter-compo @filteredData="sorted" @pricefilter="sorted" class="m-2 col-10" />
@@ -87,7 +91,7 @@ export default {
       saleTwo: require('../../assets/sale2.png'),
       saleThree: require('../../assets/sale3.png')
     }
-  },
+  },  
   methods:{
     selectToy(toy){
       this.$router.push({name:"detail-page",query:{id:toy.id}})
