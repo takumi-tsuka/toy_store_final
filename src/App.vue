@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-content-center mb-4">
     <div class="row col-12 d-flex justify-content-center">
-      <nav class="navbar navbar-expand-lg navbar-light bg-warning d-flex justify-content-between">
+      <nav class="navbar navbar-expand-lg navbar-light bg-warning d-flex justify-content-between" style="position:fixed;z-index:100;">
         <div class="col-1"></div>
         <router-link to="/" class="navbar-brand col-5">Family Toys</router-link>
         <div class="collapse navbar-collapse col-4" id="navbarSupportedContent">
@@ -35,7 +35,7 @@
     </div>
   </div>
   <main>
-    <router-view :cart="cart"/>
+    <router-view :cart="cart" style="margin-top:5%"/>
   </main>
 </template>
 
