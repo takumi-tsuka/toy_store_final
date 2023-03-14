@@ -58,7 +58,14 @@ export default {
       const user = Users.find(user => user.email === email && user.pass === pass);
       if (user) {
         alert("User logged in successfully");
-         this.$router.push({name:'product-page'});
+
+        // encrypt user information
+        const encUser = this.encrypt(JSON.stringify(user));
+  
+        // store encrypted user information in sessionStorage
+        sessionStorage.setItem("user", encUser);  
+
+        this.$router.push({name:'product-page'});
       } else {
         alert("Invalid email or password");
       }
