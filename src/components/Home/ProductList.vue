@@ -52,14 +52,10 @@
             </a>
       </div>
       <!-- CAROUSEL END -->
-
-        <div class="row mt-5">
+        <div class="row mt-5" style="width:100%">
           <div class="d-flex justify-content-center m-3 col-12">
             <sort-compo @sort="sorted" :toyData="toyData" />
-            <filter-compo
-            @filteredData="sorted"
-            @pricefilter="sorted"
-            />
+            <filter-compo @sort="sorted" :toyData="toyData" />
             <search-compo
               @sort="sorted"
               :toyData="toyData"

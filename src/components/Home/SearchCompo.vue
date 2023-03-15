@@ -16,7 +16,7 @@
         </ul>
     </div>
     </div> -->
-    <form class="d-flex col-6" style="column-gap: 0.5rem">
+    <form class="d-flex col-12" style="column-gap: 0.5rem">
         <input
             class="form-control"
             type="search"
@@ -26,7 +26,7 @@
         />
         <button type="submit" class="btn btn-success" @click.prevent="searchToy">Search</button>
     </form>
-    <ul v-if="searchFlag">
+    <ul v-if="searchFlag" style="width:100%">
         <li v-for="toy in selectedToyData" :key="toy.id" :id="toy.id" @click="test" style="list-style-type: none">{{toy.name}}</li>
     </ul>
     </div>
@@ -44,8 +44,12 @@
         },
         methods: {
             searchToy() {
-                this.$emit("sort", this.selectedToyData);
-                this.searchFlag = false;
+                if(this.selectedToyData.length == 0) {
+                    alert("nothing found!");
+                } else {
+                    this.$emit("sort", this.selectedToyData);
+                    this.searchFlag = false;
+                }
             },
             test(e) {
                 this.$router.push({name:"detail-page",query:{id:e.target.id}})
@@ -63,6 +67,8 @@
                 }
                 if(pickedDataArray.length == 0) {
                     this.searchFlag = false;
+                    // alert("nothing found!");
+                    // return;
                 }
                 this.selectedToyData = pickedDataArray;
             }
@@ -75,7 +81,7 @@
 }
 ul {
     top: 120%;
-    left: 50%;
+    /* left: 0%; */
     width: 50%;
     background-color: white;
     height: 35vh;
