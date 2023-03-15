@@ -1,5 +1,22 @@
 <template>
-    <form class="d-flex col-6" style="column-gap: 0.5rem">
+    <div class="searchContainer col-6">
+    <!-- <div class="searchContainer">
+        <form class="d-flex" style="column-gap: 0.5rem">
+            <input
+                class="form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                @input="tmpSearchToy"
+            />
+            <button type="submit" class="btn btn-success" @click.prevent="searchToy">Search</button>
+        </form>
+        <ul v-if="searchFlag" class="ul">
+            <li v-for="toy in selectedToyData" :key="toy.id" :id="toy.id" @click="test" style="list-style-type: none">{{toy.name}}</li>
+        </ul>
+    </div>
+    </div> -->
+    <form class="d-flex col-12" style="column-gap: 0.5rem">
         <input
             class="form-control"
             type="search"
@@ -12,6 +29,7 @@
     <ul v-if="searchFlag">
         <li v-for="toy in selectedToyData" :key="toy.id" :id="toy.id" @click="test" style="list-style-type: none">{{toy.name}}</li>
     </ul>
+    </div>
 </template>
 
 <script>
@@ -63,8 +81,8 @@
 }
 ul {
     top: 120%;
-    left: 50%;
-    width: 50%;
+    /* left: 50%; */
+    /* width: 50%; */
     background-color: white;
     height: 35vh;
     overflow: scroll;
