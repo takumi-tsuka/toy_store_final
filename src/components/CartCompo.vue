@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="width:70%">
-    <h1 style="width:100%;text-align:center;">Your Shopping Cart</h1>
+    <h1 style="width:100%;text-align:center;">Shopping Cart of <i>{{cart.user.fname}} {{cart.user.lname}}</i> </h1>
     <div class="table-responsive" v-if="(Scart==null)?false:true">
       <table  class="table table-striped
       table-hover	
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-      <h1 v-else>No item in your cart</h1>
+    <h1 v-else>No item in your cart</h1>
   </div>
 </template>
 <script>

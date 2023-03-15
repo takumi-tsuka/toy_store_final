@@ -49,11 +49,15 @@ export default {
       return selectedToy;
     },
     addCart(){
-      let toy = new Toys(this.selectedToy.id,this.selectedToy.name,this.selectedToy.price,this.amount);
-      this.cart.addCart(toy.id,toy);
-      this.$router.push({name:"product-page"});
-      this.alertFlag = true;
-      alert(toy.amount+" item added to your cart");
+      if(sessionStorage.getItem("user")==null){
+        this.$router.push({name:"login-page"});
+      }else{
+        let toy = new Toys(this.selectedToy.id,this.selectedToy.name,this.selectedToy.price,this.amount);
+        this.cart.addCart(toy.id,toy);
+        this.$router.push({name:"product-page"});
+        this.alertFlag = true;
+        alert(toy.amount+" item added to your cart");
+      }
     },
     countDownChanged(dismissCountDown) {
       this.dismissCountDown = dismissCountDown

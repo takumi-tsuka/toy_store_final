@@ -2,6 +2,7 @@
   <div class="container d-flex justify-content-center">
     <div class="row col-12 d-flex justify-content-center">
       
+    <!-- <a href="#" id="sctp" style="position:fixed;display:flex;justify-content:center;align-items:center;right:100px;bottom:100px;color:gray;width:3vh;height:4vh;border:3px solid gray;border-radius:50%;"><i class="fa-solid fa-chevron-up"></i></a> -->
 <!-- CAROUSEL START -->
       <div class="container d-flex justify-content-center">
         <div class="row d-flex justify-content-center">
@@ -104,3 +105,14 @@ export default {
   }
 };
 </script>
+<style scoped>
+
+  /* #sctp i:hover{
+    background-color: gray;
+    color:whitesmoke;
+  } */
+  /* #sctp:hover{
+    background-color: gray;
+    color:whitesmoke;
+  } */
+</style>
