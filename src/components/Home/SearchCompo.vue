@@ -27,7 +27,6 @@
         methods: {
             searchToy() {
                 this.$emit("sort", this.selectedToyData);
-                this.selectedToyData = null;
             },
             test(e) {
                 this.$router.push({name:"detail-page",query:{id:e.target.id}})
