@@ -81,3 +81,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+input{
+   font-family:Arial, Helvetica, sans-serif;
+}
+</style>

@@ -49,7 +49,7 @@
 
       <sort-compo @sort="sorted" :toyData="toyData" class="m-2 col-10" />
       <search-compo @sort="sorted" :toyData="toyData" :originalToyData="originalToyData" class="m-2 col-10" />
-      <filter-compo @filteredData="sorted" @pricefilter="sorted" class="m-2 col-10" />
+      <filter-compo @sort="sorted" :toyData="toyData" class="m-2 col-10" />
       <!-- CAROUSEL END -->
       <div
         class="card col-2 m-2 p-2"
@@ -98,9 +98,11 @@ export default {
       this.$router.push({name:"detail-page",query:{id:toy.id}})
     },
     sorted(data){
-      this.toyData = data;
-      console.log(data)
-      console.log(this.toyData);
+      if(data == null) {
+        alert("no results!");
+      } else {
+        this.toyData = data;
+      }
     }
   }
 };

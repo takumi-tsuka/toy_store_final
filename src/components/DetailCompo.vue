@@ -73,7 +73,8 @@ export default {
   h2 {
     color: #0496FF;
   }
-  p {
+  p,
+  summary{
     font-size: 16px
   }
   button {

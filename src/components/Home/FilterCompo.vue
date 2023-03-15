@@ -25,45 +25,48 @@
 import toyjson from "../../assets/toys.json";
 export default {
   name: "FilterCompo",
+  props: ["toyData"],
   data() {
     return {
-      toyData: toyjson,
-    //   agefilter: "Ageby",
-    //   pricefilter: "Priceby",
+      originalData: toyjson,
+      agefilter: "Ageby",
+      pricefilter: "Priceby",
     };
   },
   methods: {
     applyFilters() {
+      console.log(this.toyData)
       let filteredData = this.toyData;
       switch (this.agefilter) {
         case "1to2":
-          filteredData = filteredData.filter(toy => toy.age >= 0 && toy.age <= 2);
+          filteredData = this.toyData.filter(toy => toy.age >= 0 && toy.age <= 2);
           break;
         case "3to5":
-          filteredData = filteredData.filter(toy => toy.age >= 3 && toy.age <= 5);
+          filteredData = this.toyData.filter(toy => toy.age >= 3 && toy.age <= 5);
           break;
         case "6to10":
-          filteredData = filteredData.filter(toy => toy.age >= 6 && toy.age <= 9);
+          filteredData = this.toyData.filter(toy => toy.age >= 6 && toy.age <= 9);
           break;
         case "10more":
-          filteredData = filteredData.filter(toy => toy.age >= 10);
+          filteredData = this.toyData.filter(toy => toy.age >= 10);
+          console.log(filteredData)
           break;
       }
       switch (this.pricefilter) {
         case "1to30":
-          filteredData = filteredData.filter(toy => toy.price >= 0 && toy.price <= 30);
+          filteredData = this.toyData.filter(toy => toy.price >= 0 && toy.price <= 30);
           break;
         case "31to60":
-          filteredData = filteredData.filter(toy => toy.price >= 31 && toy.price <= 60);
+          filteredData = this.toyData.filter(toy => toy.price >= 31 && toy.price <= 60);
           break;
         case "61to90":
-          filteredData = filteredData.filter(toy => toy.price >= 61 && toy.price <= 90);
+          filteredData = this.toyData.filter(toy => toy.price >= 61 && toy.price <= 90);
           break;
         case "100more":
-          filteredData = filteredData.filter(toy => toy.price >= 100);
+          filteredData = this.toyData.filter(toy => toy.price >= 100);
           break;
       }
-      this.$emit("filteredData", filteredData);
+      this.$emit("sort", filteredData);
     },
   },
 };

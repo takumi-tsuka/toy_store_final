@@ -87,3 +87,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.form-control{
+  font-family:Arial, Helvetica, sans-serif;
+}
+</style>

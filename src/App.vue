@@ -110,9 +110,8 @@ ul {
   justify-content: flex-end;
   gap: 3vh;
 }
-
 input {
-    font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 </style>
