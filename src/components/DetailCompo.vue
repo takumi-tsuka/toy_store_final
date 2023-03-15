@@ -1,8 +1,8 @@
 <template>
-  <div class="container" style="background-color:lightBlue;padding:3%">
-    <div class="row justify-content-center align-items-start g-2">
+  <div class="container" style=" padding-top: 5vh; margin-top:20%">
+    <div class="row justify-content-center align-items-start g-2" style="padding-top:5vh; background-color:lightBlue" >
       <div class="col-5">
-        <img style="height:600px;width:500px" :src="require('../assets/img/'+selectedToy.img)" :alt="selectedToy.img">
+        <img style="height:300px; width:450px; align-itens: center padding-top:5vh" :src="require('../assets/img/'+selectedToy.img)" :alt="selectedToy.img">
       </div>
       <div class="col-7" style="padding:1%;display:flex; flex-direction:column;row-gap:3vh;">
         <h1>{{selectedToy.name}}</h1>
@@ -64,3 +64,16 @@ export default {
   }
 };
 </script>
+<style scoped>
+  h1,
+  h2 {
+    color: #0496FF;
+  }
+  p {
+    font-size: 16px
+  }
+  button {
+    font-weight: 400;
+    font-size: 18px;
+  }
+</style>

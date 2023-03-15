@@ -1,6 +1,8 @@
 <template>
     <div class="container-fluid">
-        <h1>Thank you for your order</h1>
+        <img
+            :src="thankYou"
+        />
         <h1>expected delivery date: {{expDate.sdate}} to {{expDate.edate}}</h1>
     </div>
 </template>
@@ -9,7 +11,8 @@ export default {
     name:"ThanksPage",
     data(){
         return {
-           expDate:{sdate:null,edate:null}
+            expDate:{sdate:null,edate:null},
+            thankYou: require('../assets/thanks.png'),
         } 
     },
     mounted(){
@@ -23,3 +26,18 @@ export default {
     }
 }
 </script>
+<style>
+    img{
+        width: 60%;
+    }
+    .container-fluid{
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    h1{
+        font-size: 32px;
+    }
+
+</style>
