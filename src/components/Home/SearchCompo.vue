@@ -1,5 +1,5 @@
 <template>
-    <div class="searchContainer">
+    <!-- <div class="searchContainer">
         <form class="d-flex" style="column-gap: 0.5rem">
             <input
                 class="form-control"
@@ -13,7 +13,20 @@
         <ul v-if="searchFlag" class="ul">
             <li v-for="toy in selectedToyData" :key="toy.id" :id="toy.id" @click="test" style="list-style-type: none">{{toy.name}}</li>
         </ul>
-    </div>
+    </div> -->
+    <form class="d-flex col-6" style="column-gap: 0.5rem">
+        <input
+            class="form-control"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            @input="tmpSearchToy"
+        />
+        <button type="submit" class="btn btn-success" @click.prevent="searchToy">Search</button>
+    </form>
+    <ul v-if="searchFlag">
+        <li v-for="toy in selectedToyData" :key="toy.id" :id="toy.id" @click="test" style="list-style-type: none">{{toy.name}}</li>
+    </ul>
 </template>
 
 <script>
@@ -45,6 +58,9 @@
                         pickedDataArray.push(pickedData);
                     }
                 }
+                if(pickedDataArray.length == 0) {
+                    this.searchFlag = false;
+                }
                 this.selectedToyData = pickedDataArray;
             }
         }
@@ -55,16 +71,22 @@
     position: relative;
 }
 ul {
+    top: 120%;
+    left: 50%;
+    width: 50%;
     background-color: white;
-    height: 20vh;
+    height: 35vh;
     overflow: scroll;
     padding: 0;
-    width: 100%;
     position: absolute;
     z-index: 20;
     display: block;
 }
 li {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 6vh;
     padding: 2%;
 }
 li:hover {

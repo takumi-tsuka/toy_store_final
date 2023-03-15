@@ -1,41 +1,28 @@
 <template>
-  <div class="d-flex justify-content-center mb-4">
-    <div class="row col-12 d-flex justify-content-center">
-      <nav class="navbar navbar-expand-lg navbar-light bg-warning d-flex justify-content-between" style="position:fixed;z-index:100;">
+    <div class="row col-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-warning d-flex justify-content-around" style="position: fixed; z-index: 100">
         <div class="col-1"></div>
-        <router-link to="/" class="navbar-brand col-5"><img src="./assets/logo.png" alt="logo" style="width: 200px; height: 50px;"></router-link>
-        <div class="collapse navbar-collapse col-4" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <router-link to="/" class="navbar-brand col-9">
+          <img class="logo" src="./assets/logo.png" alt="toy family"/>
+        </router-link>
+        <div class="collapse navbar-collapse col-2" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto d-flex">
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+              </router-link>
+            </li>
             <li class="nav-item">
               <router-link to="/cart" class="nav-link">
                 <i class="fa-solid fa-cart-shopping"></i>
               </router-link>
             </li>
-            <li class="nav-item">
-              <router-link to="/login" class="nav-link"
-                ><i class="fa-solid fa-user"></i
-              ></router-link>
-            </li>
           </ul>
         </div>
-        <div class="col-1"></div>
-        <div class="collapse navbar-collapse col-5 justify-content-end" id="navbarSupportedContent">
-          <form class="d-flex" style="column-gap: 0.5rem">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button type="submit" class="btn btn-success">Search</button>
-          </form>
-        </div>
-        <div class="col-1"></div>
       </nav>
     </div>
-  </div>
   <main>
-    <router-view :cart="cart" style="margin-top:5%"/>
+    <router-view :cart="cart" style="margin-top: 8%" />
   </main>
 </template>
 
@@ -44,15 +31,15 @@ import CartClass from "./classes/CartClass.js";
 export default {
   name: "App",
   components: {},
-  data(){
+  data() {
     return {
-      cart:null,
-      logFlag: false
-    }
+      cart: null,
+      logFlag: false,
+    };
   },
-  mounted(){
+  mounted() {
     this.cart = new CartClass("user");
-  }
+  },
 };
 </script>
 
@@ -64,7 +51,12 @@ nav {
 
 main {
   display: flex;
+  padding: 7% 0;
   justify-content: center;
+  background-image: url("./assets/bg.jpg");
+  background-size: 500px 500px;
+  background-position: center;
+  background-repeat: repeat;
 }
 
 i {
@@ -84,7 +76,10 @@ ul {
 }
 
 input {
-    font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+.logo {
+  height: 70px;
+}
 </style>

@@ -1,35 +1,36 @@
 <template>
-  <div class="row"></div>
-  <form class="logform m-3 justify-content-center" @submit.prevent="register">
-    <h3 class="text-success mb-4">Create an account</h3>
-    <div class="row form-outline mb-1 d-flex">
+  <form class="logform p-5" @submit.prevent="register">
+    <h2 class="mb-4">Create an account</h2>
+    
+    <div class="form-outline mb-1 d-flex justify-content-between">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" name="fname" />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" name="lname" />
+        </div>
+      </div>
+    </div>
+    <div class="row form-outline mb-4 d-flex">
       <label class="form-label col-6">First Name</label>
       <label class="form-label col-6">Last Name</label>
     </div>
 
-    <div class="form-outline mb-4 d-flex justify-content-between">
-      <div class="row col-6">
-        <input type="text" class="form-control" name="fname" />
-      </div>
-      <div class="row col-6">
-        <input type="text" class="form-control" name="lname" />
-      </div>
-    </div>
-
-    <div class="row form-outline mb-4">
-      <label class="form-label">Email</label>
+    <div class="form-outline mb-4">
       <input type="email" class="form-control" name="email" />
+      <label class="form-label">Email</label>
     </div>
 
-    <div class="row form-outline mb-4">
-      <label class="form-label">Password</label>
+    <div class="form-outline mb-4">
       <input type="password" class="form-control" name="pass" />
+      <label class="form-label">Password</label>
     </div>
 
-    <div class="row d-flex">
+    <div class="d-flex">
       <div class="col-8"></div>
       <button type="submit" class="btn btn-success btn-block mb-4 col-4">
-        Sign in
+        Resister
       </button>
     </div>
   </form>
@@ -87,3 +88,20 @@ export default {
   },
 };
 </script>
+<style scoped>
+  form {
+    background:white;
+    border-radius: 50px;
+    width:400px;
+    border: 5px double rgb(64, 171, 64);
+    margin-top:5%;
+    margin-bottom:10%
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 5%;
+  }
+
+
+</style>
