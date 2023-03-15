@@ -1,5 +1,5 @@
 <template>
-    <form class="d-flex" style="column-gap: 0.5rem">
+    <form class="d-flex col-6" style="column-gap: 0.5rem">
         <input
             class="form-control"
             type="search"

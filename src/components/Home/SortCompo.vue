@@ -1,7 +1,7 @@
 <template>
-  <div name="divSortBy">
-    <select v-model="sort" @change="sortBy">
-      <option value="Sortby">Sort by:</option>
+  <div name="divSortBy" class="col-2">
+    <select v-model="sort" @change="sortBy" class="form-select">
+      <option selected>Sort by:</option>
       <option value="priceAsc">Price (Low to High)</option>
       <option value="priceDesc">Price (High to Low)</option>
       <option value="ageAsc">Age (Young to Old)</option>
@@ -11,24 +11,22 @@
 </template>
 
 <script>
-// import toyjson from "../../assets/toys.json";
-
 export default {
   name: "SortCompo",
   props: ["toyData"],
   data() {
     return {
       sort: "Sort by:",
-      sortedToyData: null
+      sortedToyData: null,
     };
   },
   methods: {
     sortBy() {
-      this.sortedToyData = this.toyData
+      this.sortedToyData = this.toyData;
       switch (this.sort) {
-        case "Sortby":
-          this.sortedToyData.sort((a, b) => a.id - b.id);
-          break;
+        // case "default":
+        //   this.sortedToyData.sort((a, b) => a.id - b.id);
+        //   break;
         case "priceAsc":
           this.sortedToyData.sort((a, b) => a.price - b.price);
           break;

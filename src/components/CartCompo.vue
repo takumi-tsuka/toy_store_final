@@ -1,13 +1,9 @@
 <template>
-  <div class="container" style="width:70%">
-    <h1 style="width:100%;text-align:center;">Your Shopping Cart</h1>
+  <div class="cart-container container bg-white col-6 p-4">
+    <h1 class="text-center mb-3">Your Shopping Cart</h1>
     <div class="table-responsive" v-if="(Scart==null)?false:true">
-      <table  class="table table-striped
-      table-hover	
-      table-borderless
-      table-primary
-      align-middle">
-        <thead class="table-light">
+      <table  class="table">
+        <thead>
           <tr style="text-align:center;">
             <th>Name</th>
             <th>Price</th>
@@ -16,31 +12,31 @@
             <th>Delete</th>
           </tr>
           </thead>
-          <tbody class="table-group-divider">
-            <tr class="table-primary" v-for="[idx,toy] in Scart.tCart" :key="idx">
-              <td scope="row">{{toy.name}}</td>
-              <td style="text-align:center">$ {{toy.price}}</td>
-              <td>
-                <div class="mb-3" style="display:flex;justify-content:center;align-items:center;margin-bottom: 0!important;">
+          <tbody>
+            <tr v-for="[idx,toy] in Scart.tCart" :key="idx">
+              <td scope="row" class="col-5">{{toy.name}}</td>
+              <td class="col-2">$ {{toy.price}}</td>
+              <td class="col-2">
+                <div class="mb-3">
                   <input type="number" v-model="toy.amount"  @input="saveAmount(toy,$event)" 
                       class="form-control form-control-sm"  min="1" name="amount"  aria-describedby="helpId" placeholder="put amount">
                 </div>
               </td>
-              <td style="text-align:center">$ {{toy.calTotal()}}</td>
-              <td style="text-align:center"><button class="btn btn-danger" @click="deleteToy(toy)">X</button></td>
+              <td class="col-2">$ {{toy.calTotal()}}</td>
+              <td class="col-1 text-center"><button class="btn btn-danger" @click="deleteToy(toy)">X</button></td>
             </tr>
           </tbody>
       </table>
       <div class="row justify-content-center align-items-start g-2">
-        <div class="col-6">
-          <h1>Shop Total: $ {{Scart.shopTotal()}} </h1>
+        <div class="col-6 bg-white">
+          <h5 class="text-center">Shop Total:</h5><h2  class="text-center"> $ {{Scart.shopTotal()}} </h2>
         </div>
-        <div class="col-6">
+        <div class="col-6 p-4">
           <checkout-compo :cart ="Scart"/>
         </div>
       </div>
     </div>
-      <h1 v-else>No item in your cart</h1>
+      <h1 v-else class="text-center">No item in your cart</h1>
   </div>
 </template>
 <script>
@@ -89,3 +85,11 @@ export default {
   }
 };
 </script>
+<style scope>
+  .cart-container {
+    border-radius: 50px;
+    border: 5px double rgb(64, 171, 64);
+    margin-top:5%;
+    margin-bottom:10%
+  }
+</style>
