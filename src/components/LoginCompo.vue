@@ -53,6 +53,7 @@ export default {
         sessionStorage.setItem("user", encUser);  
 
         this.$router.push({name:'product-page'});
+        this.$emit("login",user);   //added by takumi to use user info in app.vue when user login
       } else {
         alert("Invalid email or password");
       }

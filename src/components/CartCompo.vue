@@ -1,6 +1,6 @@
 <template>
   <div class="cart-container container bg-white col-6 p-4">
-    <h1 class="text-center mb-3">Your Shopping Cart</h1>
+    <h1 class="text-center mb-3">Shopping Cart of <i>{{cart.user.fname}} {{cart.user.lname}}</i> </h1>
     <div class="table-responsive" v-if="(Scart==null)?false:true">
       <table  class="table">
         <thead>
@@ -63,7 +63,6 @@ export default {
     },
     deleteToy(toy){
       this.Scart.deleteToy(toy.id,toy);
-
     },
     saveAmount(toy,e){
       console.log(e.target.value);
@@ -75,7 +74,9 @@ export default {
     if(sessionStorage.getItem("cart")!=null){
       let decData = CryptoJS.AES.decrypt(sessionStorage.getItem("cart"),this.key);
       let sessionSt = JSON.parse(decData.toString(CryptoJS.enc.Utf8));
-      let shoppingCart = new CartClass("user");
+      let user = JSON.parse(CryptoJS.AES.decrypt(sessionStorage.getItem("user"),"test").toString(CryptoJS.enc.Utf8))
+      let shoppingCart = new CartClass(user);
+      console.log(shoppingCart);
       sessionSt.forEach((toy)=> {
         let newToy = new Toy(toy[1].id,toy[1].name,toy[1].price,toy[1].amount);
         shoppingCart.tCart.set(toy[0],newToy);

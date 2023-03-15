@@ -122,3 +122,14 @@ export default {
   }
 };
 </script>
+<style scoped>
+
+  /* #sctp i:hover{
+    background-color: gray;
+    color:whitesmoke;
+  } */
+  /* #sctp:hover{
+    background-color: gray;
+    color:whitesmoke;
+  } */
+</style>
