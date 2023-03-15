@@ -1,6 +1,6 @@
 <template>
     <div class="row col-12">
-      <nav class="navbar navbar-expand-lg navbar-light bg-warning d-flex justify-content-around" style="position: fixed; z-index: 100">
+      <nav class="navbar navbar-expand-lg navbar-light bg-warning d-flex justify-content-around" style="position: fixed; z-index: 100;height:10vh">
         <div class="col-1"></div>
         <router-link to="/" class="navbar-brand col-5"><img src="./assets/logo.png" alt="logo" style="width: 200px; height: 50px;"></router-link>
         <div class="collapse navbar-collapse col-4" id="navbarSupportedContent" >

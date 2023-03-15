@@ -26,7 +26,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
     img{
         width: 60%;
     }
@@ -38,6 +38,10 @@ export default {
     }
     h1{
         font-size: 32px;
+        background-color: white;
+        width: 60%;
+        text-align: center;
+        padding: 3%;
     }
 
 </style>

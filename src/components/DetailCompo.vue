@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style=" padding-top: 5vh; margin-top:20%">
+  <div class="container" style=" margin-top:20%;border:5px solid lightgray;">
     <div class="row justify-content-center align-items-start g-2" style="padding-top:5vh; background-color:lightBlue" >
       <div class="col-5">
         <img style="height:300px; width:450px; align-itens: center padding-top:5vh" :src="require('../assets/img/'+selectedToy.img)" :alt="selectedToy.img">

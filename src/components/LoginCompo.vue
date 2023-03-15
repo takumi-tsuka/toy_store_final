@@ -85,5 +85,8 @@ export default {
   .register {
     color: green;
   }
+  input {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
 </style>

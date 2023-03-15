@@ -102,6 +102,10 @@ export default {
     text-align: center;
     margin-bottom: 5%;
   }
+  input {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
 
 
 </style>

@@ -82,7 +82,7 @@
 ul {
     top: 120%;
     /* left: 0%; */
-    width: 50%;
+    /* width: 50%; */
     background-color: white;
     height: 35vh;
     overflow: scroll;
@@ -100,5 +100,9 @@ li {
 }
 li:hover {
     background-color: gray;
+}
+input{
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
 }
 </style>

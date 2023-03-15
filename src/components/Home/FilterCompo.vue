@@ -32,40 +32,81 @@ export default {
     };
   },
   methods: {
-    applyFilters() {
-      console.log(this.toyData)
+     applyFilters() {
       let filteredData = this.toyData;
+      filteredData = toyjson;
       switch (this.agefilter) {
         case "1to2":
-          filteredData = this.toyData.filter(toy => toy.age >= 0 && toy.age <= 2);
+          filteredData = filteredData.filter(toy => toy.age >= 0 && toy.age <= 2);
           break;
         case "3to5":
-          filteredData = this.toyData.filter(toy => toy.age >= 3 && toy.age <= 5);
+          filteredData = filteredData.filter(toy => toy.age >= 3 && toy.age <= 5);
           break;
         case "6to10":
-          filteredData = this.toyData.filter(toy => toy.age >= 6 && toy.age <= 9);
+          filteredData = filteredData.filter(toy => toy.age >= 6 && toy.age <= 9);
           break;
         case "10more":
-          filteredData = this.toyData.filter(toy => toy.age >= 10);
-          console.log(filteredData)
+          filteredData = filteredData.filter(toy => toy.age >= 10);
           break;
       }
       switch (this.pricefilter) {
         case "1to30":
-          filteredData = this.toyData.filter(toy => toy.price >= 0 && toy.price <= 30);
+          filteredData = filteredData.filter(toy => toy.price >= 0 && toy.price <= 30);
           break;
         case "31to60":
-          filteredData = this.toyData.filter(toy => toy.price >= 31 && toy.price <= 60);
+          filteredData = filteredData.filter(toy => toy.price >= 31 && toy.price <= 60);
           break;
         case "61to90":
-          filteredData = this.toyData.filter(toy => toy.price >= 61 && toy.price <= 90);
+          filteredData = filteredData.filter(toy => toy.price >= 61 && toy.price <= 90);
           break;
         case "100more":
-          filteredData = this.toyData.filter(toy => toy.price >= 100);
+          filteredData = filteredData.filter(toy => toy.price >= 100);
           break;
       }
       this.$emit("sort", filteredData);
     },
+
+    
+    // applyFilters() {       //riku tried to merge with sort and search 
+    //   console.log(this.toyData)
+    //   let filteredData = this.toyData;
+    //   switch (this.agefilter) {
+    //     case "1to2":
+    //       filteredData = this.toyData.filter(toy => toy.age >= 0 && toy.age <= 2);
+    //       break;
+    //     case "3to5":
+    //       filteredData = this.toyData.filter(toy => toy.age >= 3 && toy.age <= 5);
+    //       break;
+    //     case "6to10":
+    //       filteredData = this.toyData.filter(toy => toy.age >= 6 && toy.age <= 9);
+    //       break;
+    //     case "10more":
+    //       filteredData = this.toyData.filter(toy => toy.age >= 10);
+    //       console.log(filteredData)
+    //       break;
+    //   }
+    //   switch (this.pricefilter) {
+    //     case "1to30":
+    //       filteredData = this.toyData.filter(toy => toy.price >= 0 && toy.price <= 30);
+    //       break;
+    //     case "31to60":
+    //       filteredData = this.toyData.filter(toy => toy.price >= 31 && toy.price <= 60);
+    //       break;
+    //     case "61to90":
+    //       filteredData = this.toyData.filter(toy => toy.price >= 61 && toy.price <= 90);
+    //       break;
+    //     case "100more":
+    //       filteredData = this.toyData.filter(toy => toy.price >= 100);
+    //       break;
+    //   }
+    //   this.$emit("sort", filteredData);
+    // },
   },
 };
 </script>
+<style scoped>
+select{
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+}
+</style>

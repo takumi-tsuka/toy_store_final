@@ -45,3 +45,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+select{
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+}
+</style>
